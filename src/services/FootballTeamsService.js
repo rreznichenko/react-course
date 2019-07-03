@@ -11,7 +11,7 @@ class FootballTeamService {
     }
   });
 
-  async getAllTeamsByCountry() {
+  async getAllTeams() {
     try {
       const leaguesResponse = await this.fetchData.get(`/leagues/country/${config.countryCode}`);
       const { leagues } = leaguesResponse.data.api;
