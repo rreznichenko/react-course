@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 import { ThemeProvider } from '@material-ui/styles';
 import { createMuiTheme } from '@material-ui/core/styles';
 
@@ -20,14 +20,12 @@ function App() {
       <ThemeProvider theme={theme}>
         <Header setIsMenuOpen={setIsMenuOpen} />
         <NavMenuDrawer isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
-        <Router>
-          <Switch>
-            <Route exact path="/" component={Main} />
-            <Route exact path="/teams" component={Teams} />
-            <Route exact path="/team/:id" component={Team} />
-            <Route component={Page404} />
-          </Switch>
-        </Router>
+        <Switch>
+          <Route exact path="/" component={Main} />
+          <Route exact path="/teams" component={Teams} />
+          <Route exact path="/team/:id" component={Team} />
+          <Route component={Page404} />
+        </Switch>
       </ThemeProvider>
     </div>
   );
