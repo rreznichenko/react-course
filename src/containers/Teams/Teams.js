@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import { withStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import PropTypes from 'prop-types';
@@ -50,4 +51,12 @@ Teams.propTypes = {
   classes: PropTypes.object,
 }
 
-export default withStyles(styles)(Teams);
+const mapStateToProps = state => {
+  return {}
+}
+
+const mapDispatchToProps = dispatch => {
+  return  {}
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(withStyles(styles)(Teams));

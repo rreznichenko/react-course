@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import { withStyles } from '@material-ui/core/styles';
 import PropTypes from 'prop-types';
 
@@ -18,4 +19,12 @@ Team.propTypes = {
   classes: PropTypes.object,
 }
 
-export default withStyles(styles)(Team);
+const mapStateToProps = state => {
+  return {}
+}
+
+const mapDispatchToProps = dispatch => {
+  return  {}
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(withStyles(styles)(Team));

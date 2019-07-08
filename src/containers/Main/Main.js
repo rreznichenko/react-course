@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import { withStyles } from '@material-ui/core/styles';
 import PropTypes from 'prop-types';
 
@@ -21,4 +22,12 @@ Main.propTypes = {
   classes: PropTypes.object,
 }
 
-export default withStyles(styles)(Main);
+const mapStateToProps = state => {
+  return {}
+}
+
+const mapDispatchToProps = dispatch => {
+  return  {}
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(withStyles(styles)(Main));
