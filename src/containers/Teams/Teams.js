@@ -46,6 +46,8 @@ class Teams extends Component {
   }
 }
 
-Teams.propTypes = {}
+Teams.propTypes = {
+  classes: PropTypes.object,
+}
 
 export default withStyles(styles)(Teams);

@@ -14,6 +14,8 @@ class Page404 extends Component {
   }
 }
 
-Page404.propTypes = {}
+Page404.propTypes = {
+  classes: PropTypes.object,
+}
 
 export default withStyles(styles)(Page404);

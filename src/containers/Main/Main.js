@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { withStyles } from '@material-ui/core/styles';
-import Grid from '@material-ui/core/Grid';
 import PropTypes from 'prop-types';
 
 const styles = theme => ({
@@ -18,6 +17,8 @@ class Main extends Component {
   }
 }
 
-Main.propTypes = {}
+Main.propTypes = {
+  classes: PropTypes.object,
+}
 
 export default withStyles(styles)(Main);
