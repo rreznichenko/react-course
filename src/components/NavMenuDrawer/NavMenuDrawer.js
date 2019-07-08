@@ -15,6 +15,8 @@ const styles = {
   },
 };
 
+
+
 class NavMenuDrawer extends Component {
   constructor(props) {
     super(props);
@@ -41,9 +43,6 @@ class NavMenuDrawer extends Component {
               {['Inbox', 'Starred', 'Send email', 'Drafts'].map(
                 (text, index) => (
                   <ListItem button key={text}>
-                    <ListItemIcon>
-                      {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-                    </ListItemIcon>
                     <ListItemText primary={text} />
                   </ListItem>
                 )

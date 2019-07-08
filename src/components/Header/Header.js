@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
@@ -97,7 +98,9 @@ class Header extends Component {
               <MenuIcon />
             </IconButton>
             <Typography className={classes.title} variant="h6" noWrap>
-              <img className={classes.logo} src={logo} alt="logo" />
+              <Link to="/">
+                <img className={classes.logo} src={logo} alt="logo" />
+              </Link>
             </Typography>
             <div className={classes.search}>
               <div className={classes.searchIcon}>
