@@ -8,20 +8,24 @@ export default [
     {
         "name": "Main",
         "path": "/",
-        "component": Main
+        "component": Main,
+        "showInNavBar": true,
     },
     {
         "name": "Teams",
         "path": "/teams",
-        "component": Teams
+        "component": Teams,
+        "showInNavBar": true,
     },
     {
         "name": "Team",
         "path": "/team/:id",
         "component": Team,
+        "showInNavBar": false,
     },
     {
         "name": "404",
-        "component": Page404
+        "component": Page404,
+        "showInNavBar": false,
     }
 ]

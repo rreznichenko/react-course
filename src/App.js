@@ -15,7 +15,7 @@ function App() {
     <div className="App">
       <ThemeProvider theme={theme}>
         <Header setIsMenuOpen={setIsMenuOpen} />
-        <NavMenuDrawer isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
+        <NavMenuDrawer routes={Routes} isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
         <RoutesComponent routes={Routes} />
       </ThemeProvider>
     </div>

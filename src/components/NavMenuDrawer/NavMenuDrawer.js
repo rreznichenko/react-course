@@ -1,18 +1,20 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import { withStyles } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
-import InboxIcon from '@material-ui/icons/MoveToInbox';
-import MailIcon from '@material-ui/icons/Mail';
 import PropTypes from 'prop-types';
 
 const styles = {
   list: {
     width: 250
   },
+  link: {
+    color: "rgba(0, 0, 0, 0.87)",
+    textDecoration: "none"
+  }
 };
 
 
@@ -29,7 +31,7 @@ class NavMenuDrawer extends Component {
  }
 
   render() {
-    const{ classes, isMenuOpen } = this.props;
+    const{ classes, isMenuOpen, routes } = this.props;
     return (
       <div>
         <Drawer open={isMenuOpen} onClose={this.closeMenu}>
@@ -40,11 +42,14 @@ class NavMenuDrawer extends Component {
             onKeyDown={this.closeMenu}
           >
             <List>
-              {['Inbox', 'Starred', 'Send email', 'Drafts'].map(
-                (text, index) => (
-                  <ListItem button key={text}>
-                    <ListItemText primary={text} />
-                  </ListItem>
+              {routes.map(
+                (route, index) => (
+                  route.path && route.showInNavBar && 
+                  <Link key={index} className={classes.link} to={route.path}>
+                    <ListItem button>
+                        <ListItemText primary={route.name} />
+                    </ListItem>
+                  </Link>
                 )
               )}
             </List>
