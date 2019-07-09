@@ -1,8 +1,14 @@
-const initialState = {
-
-}
+import actionTypes from './constants'; 
 
 
-export default function(state = initialState, action) {
-    return state;
+export default function(state = [], action) {
+    switch (action.type) {
+        case actionTypes.SET_TEAMS:
+            return [
+                ...state,
+                ...action.payload
+            ]
+        default:
+            return state;
+    }
 }

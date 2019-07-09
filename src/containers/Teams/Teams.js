@@ -4,7 +4,7 @@ import { withStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import PropTypes from 'prop-types';
 import TeamCard from './components/TeamCard';
-
+import { getTeamsAction } from './actions';
 
 const styles = theme => ({
   root: {
@@ -13,35 +13,20 @@ const styles = theme => ({
 });
 
 class Teams extends Component {
+  componentDidMount() {
+    const { getTeams } = this.props;
+    getTeams();
+  }
   render() {
-    const { classes } = this.props;
+    const { classes, teams } = this.props;
     return (
     <div className={classes.root}>
       <Grid spacing={2} container>
-        <Grid item xs={3}>
-          <TeamCard />
-        </Grid>
-        <Grid item xs={3}>
-          <TeamCard />
-        </Grid>
-        <Grid item xs={3}>
-          <TeamCard />
-        </Grid>
-        <Grid item xs={3}>
-          <TeamCard />
-        </Grid>
-        <Grid item xs={3}>
-          <TeamCard />
-        </Grid>
-        <Grid item xs={3}>
-          <TeamCard />
-        </Grid>
-        <Grid item xs={3}>
-          <TeamCard />
-        </Grid>
-        <Grid item xs={3}>
-          <TeamCard />
-        </Grid>
+        {teams && teams.map(team => (
+          <Grid key={team.team_id} item xs={3}>
+            <TeamCard />
+          </Grid>
+        ))}
       </Grid>
     </div>);
   }
@@ -52,11 +37,15 @@ Teams.propTypes = {
 }
 
 const mapStateToProps = state => {
-  return {}
+  return {
+    teams: state.teams
+  }
 }
 
 const mapDispatchToProps = dispatch => {
-  return  {}
+  return  {
+    getTeams: () => dispatch(getTeamsAction()),
+  }
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(withStyles(styles)(Teams));

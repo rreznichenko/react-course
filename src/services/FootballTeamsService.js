@@ -11,6 +11,12 @@ class FootballTeamService {
     }
   });
 
+  legueId = '';
+
+  setLeagueId(id) {
+    this.league = id;
+  }
+
   async getAllTeams() {
     try {
       const leaguesResponse = await this.fetchData.get(`/leagues/country/${config.countryCode}`);
