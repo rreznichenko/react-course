@@ -24,7 +24,7 @@ class Teams extends Component {
       <Grid spacing={2} container>
         {teams && teams.map(team => (
           <Grid key={team.team_id} item xs={3}>
-            <TeamCard />
+            <TeamCard team={team} />
           </Grid>
         ))}
       </Grid>
@@ -38,7 +38,7 @@ Teams.propTypes = {
 
 const mapStateToProps = state => {
   return {
-    teams: state.teams
+    teams: state.teams.teamsList
   }
 }
 
