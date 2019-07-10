@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { withStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
+import Container from '@material-ui/core/Container';
 import PropTypes from 'prop-types';
 import TeamCard from './components/TeamCard';
 import { getTeamsAction } from './actions';
@@ -20,7 +21,7 @@ class Teams extends Component {
   render() {
     const { classes, teams } = this.props;
     return (
-    <div className={classes.root}>
+    <Container className={classes.root}>
       <Grid spacing={2} container>
         {teams && teams.map(team => (
           <Grid key={team.team_id} item xs={3}>
@@ -28,7 +29,7 @@ class Teams extends Component {
           </Grid>
         ))}
       </Grid>
-    </div>);
+    </Container>);
   }
 }
 
