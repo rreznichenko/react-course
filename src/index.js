@@ -6,6 +6,8 @@ import { Provider } from 'react-redux';
 import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
 
+import service from './services/FixturesService';
+
 import mainReducer from './containers/Main/reducer';
 import teamReducer from './containers/Team/reducer';
 import teamsReducer from './containers/Teams/reducer';

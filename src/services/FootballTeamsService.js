@@ -12,17 +12,26 @@ class FootballTeamService {
   });
 
   legueId = '';
-
+ 
   setLeagueId(id) {
     this.league = id;
   }
 
+  getLeagueId() {
+    return this.league;
+  }
+
+  async fetchLeagueId() {
+    const leaguesResponse = await this.fetchData.get(`/leagues/country/${config.countryCode}`);
+    const { leagues } = leaguesResponse.data.api;
+    const league = leagues.find(item => item.name === config.leagueType);
+    this.setLeagueId(league.league_id);
+  }
+
   async getAllTeams() {
     try {
-      const leaguesResponse = await this.fetchData.get(`/leagues/country/${config.countryCode}`);
-      const { leagues } = leaguesResponse.data.api;
-      const league = leagues.find(item => item.name === config.leagueType);
-      const teamsResponse = await this.fetchData.get(`/teams/league/${league.league_id}`);
+      await this.fetchLeagueId();
+      const teamsResponse = await this.fetchData.get(`/teams/league/${this.getLeagueId()}`);
       const { teams } = teamsResponse.data.api;
       return teams;
     } catch (error) {
