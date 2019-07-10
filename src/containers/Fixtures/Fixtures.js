@@ -17,7 +17,7 @@ const styles = theme => ({
   }
 });
 
-class Team extends Component {
+class Fixtures extends Component {
 
   componentDidMount() {
     const { getTeamInfo, match } = this.props;
@@ -66,7 +66,7 @@ class Team extends Component {
   }
 }
 
-Team.propTypes = {
+Fixtures.propTypes = {
   classes: PropTypes.object,
 }
 
@@ -82,4 +82,4 @@ const mapDispatchToProps = dispatch => {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(withStyles(styles)(Team));
+export default connect(mapStateToProps, mapDispatchToProps)(withStyles(styles)(Fixtures));
