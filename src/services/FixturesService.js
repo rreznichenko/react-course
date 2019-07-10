@@ -26,5 +26,4 @@ class FixturesService {
     }
   }
 }
-new FixturesService().getAllFixtures()
 export default FixturesService;

@@ -1,5 +1,5 @@
-const SET_TEAM = 'SET_TEAM';
+const SET_FIXTURES = 'SET_FIXTURES';
 
 export default {
-    SET_TEAM,
+    SET_FIXTURES,
 }
