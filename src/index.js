@@ -3,25 +3,18 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { Provider } from 'react-redux';
-import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
-import thunk from 'redux-thunk';
+import createStore from './store/reducers';
+// import thunk from 'redux-thunk';
+import rootSaga from 'redux-saga';
+import createMiddleware from 'redux-saga';
 
-import mainReducer from './containers/Main/reducer';
-import teamReducer from './containers/Team/reducer';
-import teamsReducer from './containers/Teams/reducer';
-import fixturesReducer from './containers/Fixtures/reducer'
 
-const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+const sagaMiddleware = createMiddleware();
 
-const rootReducer = combineReducers({
-    main: mainReducer,
-    teams: teamsReducer,
-    team: teamReducer,
-    fixtures: fixturesReducer
-})
+const store = createStore(sagaMiddleware);
 
-const store = createStore(rootReducer, composeEnhancers(applyMiddleware(thunk)));
 
+sagaMiddleware.run(rootSaga);
 ReactDOM.render((
                 <Provider store={store}>    
                     <Router>

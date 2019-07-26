@@ -1,7 +1,7 @@
 import actionTypes from './constants';
 import FootballTeamsService from '../../services/FootballTeamsService';
 
-const setTeamsAction = (teams) => ({
+export const setTeamsAction = (teams) => ({
     type: actionTypes.SET_TEAMS,
     payload: teams,
 })
