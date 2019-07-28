@@ -1,7 +1,9 @@
 const SET_TEAMS = 'SET_TEAMS';
 const FETCH_TEAMS = 'FETCH_TEAMS';
+const FETCH_SAGA_TEAMS = 'FETCH_SAGA_TEAMS';
 
 export default {
     SET_TEAMS,
-    FETCH_TEAMS
+    FETCH_TEAMS,
+    FETCH_SAGA_TEAMS
 }

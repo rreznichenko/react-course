@@ -6,6 +6,10 @@ export const setTeamsAction = (teams) => ({
     payload: teams,
 })
 
+export const fetchTeamsAction = () => ({
+    type: actionTypes.FETCH_SAGA_TEAMS,
+})
+
 export const getTeamsAction = () => {
     return dispatch => {
         const FTService = new FootballTeamsService();

@@ -5,7 +5,7 @@ import Grid from '@material-ui/core/Grid';
 import Container from '@material-ui/core/Container';
 import PropTypes from 'prop-types';
 import TeamCard from './components/TeamCard';
-import { getTeamsAction } from './actions';
+import { fetchTeamsAction } from './actions';
 
 const styles = theme => ({
   root: {
@@ -45,7 +45,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return  {
-    getTeams: () => dispatch(getTeamsAction()),
+    getTeams: () => dispatch(fetchTeamsAction()),
   }
 }
 
