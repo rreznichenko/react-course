@@ -1,5 +1,7 @@
 const SET_FIXTURES = 'SET_FIXTURES';
+const FETCH_FIXTURES = 'FETCH_FIXTURES';
 
 export default {
     SET_FIXTURES,
+    FETCH_FIXTURES
 }

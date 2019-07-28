@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { fetchFixturesAction } from './actions';
+import { fetchSagaFixturesAction } from './actions';
 import { withStyles } from '@material-ui/core/styles';
 import FixtureCard from './components/FixtureCard';
 import  Container  from '@material-ui/core/Container';
@@ -57,7 +57,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return  {
-    getFixturesList: () => {dispatch(fetchFixturesAction())}
+    getFixturesList: () => {dispatch(fetchSagaFixturesAction())}
   }
 }
 
