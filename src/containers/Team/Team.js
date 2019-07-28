@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { fetchTeamByIdAction } from './actions';
+import { fetchTeamAction } from './actions';
 import { withStyles } from '@material-ui/core/styles';
 import  Container  from '@material-ui/core/Container';
 import  Grid  from '@material-ui/core/Grid';
@@ -78,7 +78,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return  {
-    getTeamInfo: id => {dispatch(fetchTeamByIdAction(id))}
+    getTeamInfo: id => {dispatch(fetchTeamAction(id))}
   }
 }
 
