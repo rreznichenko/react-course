@@ -97,10 +97,16 @@ class FixtureCard extends Component {
           </Button>
         </CardActions>
         <Dialog onClose={this.handleClose} aria-labelledby="simple-dialog-title" open={isDrawerOpen}>
-          <DialogTitle id="simple-dialog-title">Set backup account</DialogTitle>
+          <DialogTitle id="simple-dialog-title">Details</DialogTitle>
           <List>
             <ListItem>
-              <ListItemText primary="add account" />
+              <ListItemText primary={`Event Held on: ${new Date(fixture.event_date)}`} />
+            </ListItem>
+            <ListItem>
+              <ListItemText primary={`Time Elapsed: ${fixture.elapsed} min`} />
+            </ListItem>
+            <ListItem>
+              <ListItemText primary={`Match Status: ${fixture.status}`} />
             </ListItem>
           </List>
         </Dialog>
