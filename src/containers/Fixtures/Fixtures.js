@@ -49,7 +49,8 @@ Fixtures.propTypes = {
   classes: PropTypes.object,
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = (state, ownProps) => {
+  console.log(ownProps)
   return {
     fixturesList: state.fixtures.fixturesList
   }
