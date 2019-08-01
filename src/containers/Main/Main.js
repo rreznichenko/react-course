@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { withStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
-import Card from '@material-ui/core/Card';
+// import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
-import Typography from '@material-ui/core/Typography';
+// import Typography from '@material-ui/core/Typography';
 import PropTypes from 'prop-types';
 
 import Fixtures from '../Fixtures';
@@ -20,12 +20,12 @@ class Main extends Component {
     const { classes } = this.props;
     return (
       <Grid container>
-        <Grid item xs={5}>
+        <Grid item xs={6}>
             <CardContent>
                   <Fixtures />
             </CardContent>
         </Grid>  
-        <Grid item xs={3}>
+        {/* <Grid item xs={3}>
           <Card className={classes.card}>
               <CardContent>
                 <Grid container justify="space-around">
@@ -50,7 +50,7 @@ class Main extends Component {
                 </Grid>
               </CardContent>
           </Card>
-        </Grid>  
+        </Grid>   */}
       </Grid>
     );
   }

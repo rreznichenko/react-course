@@ -25,5 +25,18 @@ class FixturesService {
       return [];
     }
   }
+
+  async getLiveFixtures() {
+    try {
+        const FTService = new FootballTeamService();
+        await FTService.fetchLeagueId();
+        const leagueId = FTService.getLeagueId();
+        const fixturesResponse = await this.fetchData.get(`/fixtures/live/${leagueId}`);
+        const { fixtures } = fixturesResponse.data.api;
+        return fixtures;
+    } catch (error) {
+      return [];
+    }
+  }
 }
 export default FixturesService;
